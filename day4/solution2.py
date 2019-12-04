@@ -15,20 +15,6 @@ def checkNeverDecreaseRule(n):
 		i += 1
 	return True
 
-def checkHasAdjacentSame(n):
-	n = str(n)
-	l = len(n)
-	i = 0
-	adjCount = 0
-	while i < l - 1:
-		if n[i] == n[i + 1]:
-			adjCount += 1
-		i += 1
-	if adjCount >= 1:
-		return True
-	else:
-		return False
-
 def checkFinalRule(n):
 	n = str(n)
 	for i in n:
@@ -49,7 +35,7 @@ current = int(input.split("-")[0])
 resultArr = []
 
 while current <= int(highest):
-	if checkNeverDecreaseRule(current) and checkHasAdjacentSame(current) and checkFinalRule(current):
+	if checkNeverDecreaseRule(current) and checkFinalRule(current):
 		resultArr.append(current)
 	current += 1
 
