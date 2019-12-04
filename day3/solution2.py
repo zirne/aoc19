@@ -1,5 +1,5 @@
 from pprint import pprint
-import numpy
+#import numpy
 #import sys
 
 def getNewCoordinates(x,y,instruction):
@@ -31,7 +31,7 @@ def readInputFile(filename):
 	f.close()
 	return inputString
 
-inputData = readInputFile("test3.txt")
+inputData = readInputFile("input.txt")
 
 wirePaths = []
 # Prepare Input Data
@@ -139,17 +139,17 @@ print(allIntersectionsOrder)
 
 output = 9223372036854775807
 for i in allIntersectionsDistance[0]:
-#    print(i)
+    print(i)
     indexForCoordinate = allIntersectionsDistance[0].index(i)
-#    print(indexForCoordinate)
+    print(indexForCoordinate)
     # fetch which coordinates the distance is to
     coordinates = allIntersectionsOrder[0][indexForCoordinate]
-#    print(coordinates)
+    print(coordinates)
     # fetch other index
     otherIndex = allIntersectionsOrder[1].index(coordinates)
-#    print(otherIndex)
-    otherValue = allIntersectionsDistance[0][otherIndex]
-#    print(otherValue)
+    print(otherIndex)
+    otherValue = allIntersectionsDistance[1][otherIndex]
+    print(otherValue)
     if int(i) + int(otherValue) < output:
         output = int(i) + int(otherValue)
 
